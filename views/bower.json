@@ -1,0 +1,19 @@
+{
+  "name": "Litt",
+  "version": "0.0.0",
+  "authors": [
+    "Kyriakos Georgiou <kyriakos.a.georgiou@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loading-bar": "~0.8.0",
+    "angular": "~1.5.0"
+  }
+}

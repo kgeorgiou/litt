@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="litt">
+<head>
+    <title>LITT.</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kyriakos Georgiou">
+    <meta name="description" content="Litt">
+
+    <script src="bower_components/angular/angular.min.js" type="application/javascript"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <link href="bower_components/angular-loading-bar/build/loading-bar.min.css" rel="stylesheet" type="text/css">
+
+    <script src="build/js/litt.min.js" type="application/javascript"></script>
+    <link href="build/css/litt.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="body-white">
+
+    <div ng-controller="LittController" ng-cloak>
+        <h2 align="center">LITT.</h2>
+        <form name="searchTermForm" class="search-container" ng-submit="getSynonyms()">
+            <input name="longUrl" id="input-term" placeholder="Type a legal term..." size="100"
+                   autocomplete="on" type="text" ng-model="searchTerm" data-ng-required="true">
+            <input value="SEARCH" type="submit" class="search-button btn-bw" formnovalidate/>
+        </form>
+        <div ng-show="showHeader()" class="results-container">
+            <h3>Words similar<span class="asterisk">*</span> to "{{term}}".</h3>
+            <p class="chasm">&nbsp;</p>
+            <ol>
+                <li ng-repeat="synonym in synonymsList">{{synonym}}</li>
+            </ol>
+            <p class="sub-note">*Embarrassing noise may apply.</p>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+    <link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+</footer>
+
+</html>
