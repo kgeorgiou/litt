@@ -22,7 +22,7 @@ var LittController = {
 
         // sends a message to the Python script via stdin
         client.invoke("findSimilarWords", searchTerm, function (error, result, more) {
-            var processed = Utils.filterWord2VecWords(JSON.parse(result));
+            var processed = Utils.filterWord2VecWords(JSON.parse(result), searchTerm);
             res.json({
                 status: 'ok',
                 words: processed

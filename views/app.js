@@ -6,13 +6,13 @@ app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
 
 app.controller('LittController', ['$scope', '$http', function ($scope, $http) {
 
-    var API_URL = "http://localhost:3003/littup";
+    var API_URL = "http://litt.kg.gg/littup";
     var REGEX_SANITIZER = new RegExp(/[^a-zA-Z-]/g);
 
     $scope.searchTerm = "";
     $scope.term = "";
 
-    $scope.synonymsList = [];
+    $scope.similarsList = undefined;
 
     $scope.$watch('searchTerm', function (newVal, oldVal) {
         if (!newVal || !newVal.length)
@@ -28,15 +28,19 @@ app.controller('LittController', ['$scope', '$http', function ($scope, $http) {
         $scope.term = $scope.searchTerm;
 
         $http.post(API_URL, { term : $scope.term }).success(function (data) {
-            $scope.synonymsList = data.words;
+            $scope.similarsList = data.words;
         }).error(function (status, error) {
 
         });
 
     };
 
-    $scope.showHeader = function () {
-        return $scope.synonymsList && $scope.synonymsList.length && $scope.term && $scope.term.length;
+    $scope.showResult = function () {
+        return $scope.similarsList && $scope.similarsList.length && $scope.term && $scope.term.length;
+    };
+
+    $scope.isResultEmpty = function() {
+        return $scope.similarsList && !$scope.similarsList.length && $scope.term && $scope.term.length;
     }
 
 }]);

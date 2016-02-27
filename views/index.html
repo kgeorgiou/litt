@@ -8,6 +8,8 @@
     <meta name="author" content="Kyriakos Georgiou">
     <meta name="description" content="Litt">
 
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon" />
+
     <script src="bower_components/angular/angular.min.js" type="application/javascript"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
     <link href="bower_components/angular-loading-bar/build/loading-bar.min.css" rel="stylesheet" type="text/css">
@@ -25,13 +27,16 @@
                    autocomplete="on" type="text" ng-model="searchTerm" data-ng-required="true">
             <input value="SEARCH" type="submit" class="search-button btn-bw" formnovalidate/>
         </form>
-        <div ng-show="showHeader()" class="results-container">
+        <div ng-show="showResult()" class="results-container">
             <h3>Words similar<span class="asterisk">*</span> to "{{term}}".</h3>
             <p class="chasm">&nbsp;</p>
             <ol>
-                <li ng-repeat="synonym in synonymsList">{{synonym}}</li>
+                <li ng-repeat="similar in similarsList">{{similar}}</li>
             </ol>
             <p class="sub-note">*Embarrassing noise may apply.</p>
+        </div>
+        <div ng-show="isResultEmpty()" class="results-container">
+            <h3>"{{term}}" was not found in the dictionary.</h3>
         </div>
     </div>
 
