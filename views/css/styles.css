@@ -89,6 +89,10 @@ h2 {
     .results-container {
         width: 85%;
     }
+
+    h2 {
+        margin: 5px;
+    }
 }
 
 .btn-bw {
