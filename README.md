@@ -1,6 +1,6 @@
 # LITT.
 
-A thesaurus for legal terms.
+A thesaurus for legal terms - [litt.kg.gg](http://litt.kg.gg) 
 
 The underlying language model was trained on a corpus of court cases using the Python version of [word2vec](https://radimrehurek.com/gensim/models/word2vec.html).
 
