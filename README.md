@@ -7,4 +7,4 @@ The underlying language model was trained on a corpus of court cases using the P
 To train your own model on a different corpus, put all text files in ``word2vec/train/corpus/`` directory and place the trained model in ``word2vec/test/models/vectors.model``.
 
 Notes:
-I have omitted the corpus text files and the trained model's file becaus of their large size.
+I have omitted the corpus text files and the trained model's file because of their large size.
