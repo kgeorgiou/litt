@@ -6,7 +6,7 @@ from gensim.models import word2vec
 class Sentences(object):
     def __init__(self, path=None):
         if not path:
-            path = "corpora"
+            path = "corpus"
         self.path = path
 
     def __iter__(self):
