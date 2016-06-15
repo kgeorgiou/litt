@@ -1,4 +1,4 @@
-# [LITT.](http://litt.kg.gg) 
+# LITT. 
 
 A thesaurus for legal terms.
 
